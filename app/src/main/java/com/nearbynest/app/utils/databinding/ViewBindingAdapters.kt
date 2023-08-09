@@ -24,6 +24,8 @@ import androidx.core.view.isGone
 import androidx.core.view.isInvisible
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 
 /**
  * Set view's visibility gone.
@@ -43,14 +45,22 @@ fun showUnlessInvisible(view: View, isInvisible: Boolean) {
     view.isInvisible = isInvisible
 }
 
+const val RADIUS = 24
 /**
  * Load image into [imageView] from the [imageUri].
  */
 @BindingAdapter(value = ["imageUri", "placeholder"], requireAll = false)
 fun imageUri(imageView: ImageView, imageUri: Uri?, placeholder: Drawable?) {
+    val requestOptions = RequestOptions().apply {
+        transform(RoundedCorners(RADIUS))
+        placeholder?.let {
+            placeholder(it)
+        }
+    }
+
     Glide.with(imageView)
         .load(imageUri)
-        .placeholder(placeholder)
+        .apply(requestOptions)
         .into(imageView)
 }
 

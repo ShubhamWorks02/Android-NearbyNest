@@ -13,23 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nearbynest.app.utils
+package com.nearbynest.app.data.fakedata
 
-/**
- * API URLs collection.
- */
-object Urls {
-    private const val BASE_DEV = "https://randomuser.me/api/"
-    private const val BASE_QA = ""
-    private const val BASE_PRODUCTION = ""
-    const val BASE_IMAGE = "https://pixabay.com"
-
-    /**
-     * Get Base URL for [flavor].
-     */
-    fun getBaseUrl(flavor: ProductFlavor.Flavor): String = when (flavor) {
-        ProductFlavor.Flavor.DEV -> BASE_DEV
-        ProductFlavor.Flavor.QA -> BASE_QA
-        ProductFlavor.Flavor.PRODUCTION -> BASE_PRODUCTION
-    }
-}
+data class Features(
+    val architectureType: String? = null,
+    val cooling: Boolean? = null,
+    val coolingType: String? = null,
+    val exteriorType: String? = null,
+    val floorCount: Long? = null,
+    val foundationType: String? = null,
+    val garage: Boolean? = null,
+    val garageType: String? = null,
+    val heating: Boolean? = null,
+    val heatingType: String? = null,
+    val pool: Boolean? = null,
+    val roofType: String? = null,
+    val roomCount: Long? = null,
+    val unitCount: Long? = null
+)

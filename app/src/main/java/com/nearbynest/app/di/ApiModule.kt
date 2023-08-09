@@ -18,6 +18,7 @@ package com.nearbynest.app.di
 import android.content.Context
 import com.nearbynest.app.BuildConfig
 import com.nearbynest.app.data.remote.ApiService
+import com.nearbynest.app.data.remote.ImageApiService
 import com.nearbynest.app.data.remote.apiresult.ApiResultCallAdapterFactory
 import com.nearbynest.app.utils.Urls
 import com.nearbynest.app.utils.pref.FlavorPreferences
@@ -77,7 +78,7 @@ object ApiModule {
         apiResultCallAdapterFactory: ApiResultCallAdapterFactory
     ): ApiService = Retrofit.Builder()
         .baseUrl(
-            Urls.getBaseUrl(flavorPreferences.flavor)
+            Urls.BASE_IMAGE
                 .also { Timber.d("Setting Base URL : $it") }
         )
         .client(okHttpClient)
@@ -85,4 +86,20 @@ object ApiModule {
         .addCallAdapterFactory(apiResultCallAdapterFactory)
         .build()
         .create(ApiService::class.java)
+
+    @Provides
+    fun provideImageRetrofit(
+        @Named(OKHTTP_CLIENT) okHttpClient: OkHttpClient,
+        flavorPreferences: FlavorPreferences,
+        apiResultCallAdapterFactory: ApiResultCallAdapterFactory
+    ): ImageApiService = Retrofit.Builder()
+        .baseUrl(
+            Urls.BASE_IMAGE
+                .also { Timber.d("Setting Base URL : $it") }
+        )
+        .client(okHttpClient)
+        .addConverterFactory(GsonConverterFactory.create())
+        .addCallAdapterFactory(apiResultCallAdapterFactory)
+        .build()
+        .create(ImageApiService::class.java)
 }

@@ -13,23 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nearbynest.app.utils
+package com.nearbynest.app.data.remote
 
-/**
- * API URLs collection.
- */
-object Urls {
-    private const val BASE_DEV = "https://randomuser.me/api/"
-    private const val BASE_QA = ""
-    private const val BASE_PRODUCTION = ""
-    const val BASE_IMAGE = "https://pixabay.com"
+import com.nearbynest.app.data.remote.apiresult.ApiResult
+import com.nearbynest.app.data.remote.response.PropertyImageResponse
+import retrofit2.http.GET
+import retrofit2.http.Query
 
-    /**
-     * Get Base URL for [flavor].
-     */
-    fun getBaseUrl(flavor: ProductFlavor.Flavor): String = when (flavor) {
-        ProductFlavor.Flavor.DEV -> BASE_DEV
-        ProductFlavor.Flavor.QA -> BASE_QA
-        ProductFlavor.Flavor.PRODUCTION -> BASE_PRODUCTION
-    }
+interface ImageApiService {
+    @GET("/api/")
+    suspend fun getImages(
+        @Query("key") apiKey: String,
+        @Query("q") query: String,
+        @Query("image_type") imageType: String,
+        @Query("pretty") pretty: Boolean = true,
+        @Query("category") category: String
+    ): ApiResult<PropertyImageResponse>
 }

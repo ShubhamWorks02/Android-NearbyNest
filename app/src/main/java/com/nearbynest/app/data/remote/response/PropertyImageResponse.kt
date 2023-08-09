@@ -13,23 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nearbynest.app.utils
+package com.nearbynest.app.data.remote.response
 
-/**
- * API URLs collection.
- */
-object Urls {
-    private const val BASE_DEV = "https://randomuser.me/api/"
-    private const val BASE_QA = ""
-    private const val BASE_PRODUCTION = ""
-    const val BASE_IMAGE = "https://pixabay.com"
+import com.google.gson.annotations.SerializedName
 
-    /**
-     * Get Base URL for [flavor].
-     */
-    fun getBaseUrl(flavor: ProductFlavor.Flavor): String = when (flavor) {
-        ProductFlavor.Flavor.DEV -> BASE_DEV
-        ProductFlavor.Flavor.QA -> BASE_QA
-        ProductFlavor.Flavor.PRODUCTION -> BASE_PRODUCTION
-    }
-}
+data class PropertyImageResponse(
+    @SerializedName("total") val total: Int?,
+    @SerializedName("totalHits") val totalHits: Int?,
+    @SerializedName("hits") val hits: List<ImageInfo>?
+)
