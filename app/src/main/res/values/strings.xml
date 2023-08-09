@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">NearByNest</string>
     <string name="profile_image_description">Profile Image</string>
+    <string name="menu_title_map">Map</string>
+    <string name="menu_title_list">List</string>
+    <string name="menu_title_profile">Profile</string>
 </resources>

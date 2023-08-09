@@ -92,7 +92,7 @@ class SampleViewModel @Inject constructor(
     }
 
     /**
-     * Handle the failure occuring in API call
+     * Handle the failure occurring in API call
      */
     private fun handleApiFailure() {
         _isLoadingPage.value = false

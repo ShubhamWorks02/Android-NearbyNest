@@ -26,7 +26,7 @@ object Versions {
     const val KOTLIN_GRADLE = "1.8.10"
     const val LIFECYCLE = "2.5.1"
     const val LOADING_BUTTON = "2.2.0"
-    const val MATERIAL = "1.2.0"
+    const val MATERIAL = "1.9.0"
     const val MOCKITO_CORE = "5.1.1"
     const val MOCKITO_KOTLIN = "2.2.0"
     const val NAVIGATION = "2.5.3"
