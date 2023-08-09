@@ -3,6 +3,7 @@ plugins {
     kotlin(Plugins.Kotlin.ANDROID)
     kotlin(Plugins.Kotlin.KAPT)
     id(Plugins.HILT)
+    id(Plugins.GOOGLE_SERVICES)
 }
 
 apply {
@@ -44,6 +45,8 @@ android {
 
         buildTypes.forEach { type ->
             val appCenter = BuildConfigFields.APPCENTER_SECRET
+            val apiKey = BuildConfigFields.IMAGE_API_KEY
+            type.buildConfigField(appCenter.type, apiKey.title, apiKey.value)
             type.buildConfigField(appCenter.type, appCenter.title, appCenter.value)
         }
     }
@@ -139,4 +142,12 @@ dependencies {
     
     // Glide
     implementation(Libs.GLIDE)
+
+    // Firebase
+    implementation(platform(Libs.BOM))
+    implementation(Libs.FIREBASE_SDK_ANALYTICS)
+    implementation(Libs.FIREBASE_AUTH)
+
+    // Firestore
+    implementation(Libs.FIRESTORE)
 }

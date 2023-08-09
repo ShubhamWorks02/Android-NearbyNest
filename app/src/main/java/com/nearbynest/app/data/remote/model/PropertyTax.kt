@@ -13,14 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nearbynest.app.data.remote.request
+package com.nearbynest.app.data.remote.model
 
-import com.google.gson.annotations.SerializedName
-
-data class DummyRequest(
-    @SerializedName("name")
-    val name: String = "",
-
-    @SerializedName("location")
-    val location: String = ""
+data class PropertyTax(
+    val year: Int,
+    val total: Int? = null
 )

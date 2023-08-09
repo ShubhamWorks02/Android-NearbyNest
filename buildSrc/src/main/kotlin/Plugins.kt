@@ -5,6 +5,7 @@ object Plugins {
     const val HILT = "dagger.hilt.android.plugin"
     const val GOOGLE_SERVICES = "com.google.gms.google-services"
     const val DETEKT = "io.gitlab.arturbosch.detekt"
+    const val KOTLIN = "org.jetbrains.kotlin.android"
 
     object Kotlin {
         const val ANDROID = "android"

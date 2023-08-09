@@ -15,6 +15,8 @@
  */
 package com.nearbynest.app.di
 
+import com.nearbynest.app.data.repository.ImageRepository
+import com.nearbynest.app.data.repository.ImageRepositoryImpl
 import com.nearbynest.app.data.repository.UserRepository
 import com.nearbynest.app.data.repository.UserRepositoryImpl
 import com.nearbynest.app.utils.ResourceHelper
@@ -22,8 +24,8 @@ import com.nearbynest.app.utils.ResourceHelperImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
-import javax.inject.Singleton
 import dagger.hilt.components.SingletonComponent
+import javax.inject.Singleton
 
 /**
  * Defines all the classes that need to be provided in the scope of the app.
@@ -40,4 +42,8 @@ abstract class AppBindingModule {
     @Singleton
     @Binds
     abstract fun bindUserRepository(impl: UserRepositoryImpl): UserRepository
+
+    @Singleton
+    @Binds
+    abstract fun bindImageRepository(impl: ImageRepositoryImpl): ImageRepository
 }

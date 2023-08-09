@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nearbynest.app.data.remote.request
+package com.nearbynest.app.data.remote.model
 
-import com.google.gson.annotations.SerializedName
-
-data class DummyRequest(
-    @SerializedName("name")
-    val name: String = "",
-
-    @SerializedName("location")
-    val location: String = ""
+data class MailingAddress(
+    val id: String,
+    val addressLine1: String,
+    val city: String,
+    val state: String,
+    val zipCode: String
 )

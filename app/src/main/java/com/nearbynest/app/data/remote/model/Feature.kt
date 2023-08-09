@@ -13,14 +13,21 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nearbynest.app.data.remote.request
+package com.nearbynest.app.data.remote.model
 
-import com.google.gson.annotations.SerializedName
-
-data class DummyRequest(
-    @SerializedName("name")
-    val name: String = "",
-
-    @SerializedName("location")
-    val location: String = ""
+data class Feature(
+    val architectureType: String,
+    val cooling: Boolean,
+    val coolingType: String? = null,
+    val exteriorType: String? = null,
+    val floorCount: Int,
+    val foundationType: String? = null,
+    val garage: Boolean,
+    val garageType: String? = null,
+    val heating: Boolean,
+    val heatingType: String? = null,
+    val pool: Boolean,
+    val roofType: String? = null,
+    val roomCount: Int,
+    val unitCount: Int
 )

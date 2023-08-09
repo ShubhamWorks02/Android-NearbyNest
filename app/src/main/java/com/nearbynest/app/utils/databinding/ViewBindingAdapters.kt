@@ -24,6 +24,8 @@ import androidx.core.view.isGone
 import androidx.core.view.isInvisible
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners
+import com.bumptech.glide.request.RequestOptions
 
 /**
  * Set view's visibility gone.
@@ -60,4 +62,18 @@ fun imageUri(imageView: ImageView, imageUri: Uri?, placeholder: Drawable?) {
 @BindingAdapter(value = ["imageUrl", "placeholder"], requireAll = false)
 fun imageUrl(imageView: ImageView, imageUrl: String?, placeholder: Drawable?) {
     imageUri(imageView, imageUrl?.toUri(), placeholder)
+}
+
+/**
+ * Set corner radius of [imageView].
+ */
+@BindingAdapter("imageCornerRadius")
+fun imageCornerRadius(imageView: ImageView, cornerRadius: Int) {
+    val roundedCorners = RoundedCorners(cornerRadius)
+    val requestOptions = RequestOptions.bitmapTransform(roundedCorners)
+
+    Glide.with(imageView)
+        .load(imageView.drawable)
+        .apply(requestOptions)
+        .into(imageView)
 }
