@@ -40,4 +40,5 @@ object Versions {
     const val TEST_RUNNER = "1.5.2"
     const val TEST_RULES = "1.5.0"
     const val DETEKT = "1.22.0"
+    const val BOM = "32.2.2"
 }

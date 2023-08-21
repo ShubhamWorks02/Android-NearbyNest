@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "922426330551",
+    "project_id": "near-by-nest",
+    "storage_bucket": "near-by-nest.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:922426330551:android:4a9d51616b1905cf3b6c32",
+        "android_client_info": {
+          "package_name": "com.nearbynest.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "922426330551-g2gtmemmc3vddk4oonfhob4vok746cel.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD9A_BIrJuAH-YVKdOptThj593NdfQ5C2w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "922426330551-g2gtmemmc3vddk4oonfhob4vok746cel.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -70,4 +70,8 @@ object Libs {
 
     // GLIDE
     const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
+
+    // Firebase-BOM
+    const val BOM = "com.google.firebase:firebase-bom:${Versions.BOM}"
+    const val FIREBASE_SDK_ANALYTICS = "com.google.firebase:firebase-analytics-ktx"
 }

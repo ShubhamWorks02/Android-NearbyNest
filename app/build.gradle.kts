@@ -3,6 +3,7 @@ plugins {
     kotlin(Plugins.Kotlin.ANDROID)
     kotlin(Plugins.Kotlin.KAPT)
     id(Plugins.HILT)
+    id(Plugins.GOOGLE_SERVICES)
 }
 
 apply {
@@ -139,4 +140,8 @@ dependencies {
     
     // Glide
     implementation(Libs.GLIDE)
+
+    // Firebase-BOM
+    implementation(platform(Libs.BOM))
+    implementation(Libs.FIREBASE_SDK_ANALYTICS)
 }

@@ -8,6 +8,7 @@ buildscript {
         classpath(ClassPaths.ANDROID_GRADLE)
         classpath(ClassPaths.KOTLIN_GRADLE)
         classpath(ClassPaths.HILT_GRADLE)
+        classpath(ClassPaths.GOOGLE_SERVICES)
     }
 }
 
