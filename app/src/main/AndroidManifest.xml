@@ -14,8 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".ui.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.HomeActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,9 +32,7 @@
             android:name=".ui.splash.SplashActivity"
             android:exported="true"
             android:noHistory="true"
-            android:theme="@style/AppTheme.Splash">
-        </activity>
-
+            android:theme="@style/AppTheme.Splash" />
         <activity android:name=".ui.sample.SampleActivity" />
     </application>
 

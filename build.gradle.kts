@@ -15,6 +15,7 @@ buildscript {
 plugins {
     id(Plugins.SPOTLESS) version Versions.SPOTLESS
     id(Plugins.DETEKT) version Versions.DETEKT
+    id("org.jetbrains.kotlin.android") version "1.8.0" apply false
 }
 
 allprojects {

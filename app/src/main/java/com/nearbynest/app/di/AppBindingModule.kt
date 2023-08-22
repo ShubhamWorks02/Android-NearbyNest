@@ -15,6 +15,8 @@
  */
 package com.nearbynest.app.di
 
+import com.nearbynest.app.data.repository.AuthRepository
+import com.nearbynest.app.data.repository.AuthRepositoryImpl
 import com.nearbynest.app.data.repository.ImageRepository
 import com.nearbynest.app.data.repository.ImageRepositoryImpl
 import com.nearbynest.app.data.repository.UserRepository
@@ -46,4 +48,8 @@ abstract class AppBindingModule {
     @Singleton
     @Binds
     abstract fun bindImageRepository(impl: ImageRepositoryImpl): ImageRepository
+
+    @Singleton
+    @Binds
+    abstract fun bindAuthRepository(impl: AuthRepositoryImpl): AuthRepository
 }

@@ -103,6 +103,10 @@ dependencies {
     implementation(Libs.NAVIGATION_FRAGMENT_KTX)
     // Hilt
     implementation(Libs.HILT)
+    implementation("com.google.firebase:firebase-auth-ktx:22.1.1")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.8.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     kapt(Libs.HILT_DAGGER_COMPILER)
     kapt(Libs.HILT_COMPILER)
 
