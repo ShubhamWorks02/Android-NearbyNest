@@ -19,7 +19,7 @@ package com.nearbynest.app.utils
  * API URLs collection.
  */
 object Urls {
-    private const val BASE_DEV = "https://randomuser.me/api/"
+    private const val BASE_DEV = "https://pixabay.com"
     private const val BASE_QA = ""
     private const val BASE_PRODUCTION = ""
 

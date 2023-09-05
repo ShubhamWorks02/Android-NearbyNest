@@ -8,12 +8,14 @@ buildscript {
         classpath(ClassPaths.ANDROID_GRADLE)
         classpath(ClassPaths.KOTLIN_GRADLE)
         classpath(ClassPaths.HILT_GRADLE)
+        classpath(ClassPaths.GOOGLE_SERVICES)
     }
 }
 
 plugins {
     id(Plugins.SPOTLESS) version Versions.SPOTLESS
     id(Plugins.DETEKT) version Versions.DETEKT
+    id(Plugins.KOTLIN) version Versions.KOTLIN apply false
 }
 
 allprojects {

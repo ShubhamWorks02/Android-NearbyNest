@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="data"
+            type="com.nearbynest.app.data.remote.model.PropertyDetails" />
+
+        <variable
+            name="image"
+            type="com.nearbynest.app.data.remote.response.ImageInfo" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/card_corner_radius"
+        android:layout_marginVertical="@dimen/card_space_vertical"
+        app:cardCornerRadius="@dimen/card_corner_radius"
+        app:cardElevation="@dimen/space_small">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/card_space_horizontal"
+            android:layout_marginVertical="@dimen/card_space_horizontal"
+            android:layout_marginEnd="@dimen/space_normal">
+
+            <ImageView
+                android:id="@+id/img_property"
+                android:layout_width="@dimen/property_image"
+                android:layout_height="@dimen/property_image"
+                android:layout_marginStart="@dimen/card_space_horizontal"
+                android:background="@drawable/rounded_image"
+                tools:src="@drawable/img_preview_property_1"
+                app:imageUrl="@{data.image.webformatURL}"
+                app:imageCornerRadius="@{24}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_city_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/space_small"
+                android:layout_marginTop="@dimen/space_small"
+                tools:text="@string/tv_preview_city_name"
+                android:text="@{data.city}"
+                android:textColor="@color/black"
+                android:textSize="@dimen/card_property_name"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@id/img_property"
+                app:layout_constraintTop_toTopOf="@id/img_property" />
+
+            <TextView
+                android:id="@+id/tv_property_price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_price_start_space"
+                android:layout_marginEnd="@dimen/space_medium"
+                android:text="@string/tv_preview_apartment_price"
+                android:textColor="@color/major_button_color"
+                android:textSize="@dimen/card_property_name"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tv_city_name"
+                app:layout_constraintTop_toTopOf="@id/tv_city_name" />
+
+            <ImageView
+                android:id="@+id/img_location_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_space_horizontal"
+                android:layout_marginTop="@dimen/space_small"
+                android:src="@drawable/img_location_mark"
+                app:layout_constraintStart_toEndOf="@id/img_property"
+                app:layout_constraintTop_toBottomOf="@id/tv_city_name" />
+
+            <TextView
+                android:id="@+id/tv_property_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_small"
+                tools:text="@string/tv_preview_address"
+                android:text="@{data.addressLine1}"
+                android:textColor="@color/tv_address"
+                android:textSize="@dimen/card_address_size"
+                app:layout_constraintBottom_toBottomOf="@id/img_location_mark"
+                app:layout_constraintStart_toEndOf="@id/img_location_mark"
+                app:layout_constraintTop_toTopOf="@id/img_location_mark" />
+
+            <ImageView
+                android:id="@+id/img_square_foot"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_space_horizontal"
+                android:layout_marginTop="@dimen/card_space_horizontal"
+                app:layout_constraintStart_toEndOf="@+id/img_property"
+                app:layout_constraintTop_toBottomOf="@+id/img_location_mark"
+                app:srcCompat="@drawable/img_square_foot" />
+
+            <TextView
+                android:id="@+id/tv_property_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_small"
+                tools:text="@string/tv_preview_square_foot"
+                android:text="@{data.squareFootage+``}"
+                android:textColor="@color/tv_address"
+                android:textSize="@dimen/card_address_size"
+                app:layout_constraintBottom_toBottomOf="@id/img_square_foot"
+                app:layout_constraintStart_toEndOf="@id/img_square_foot"
+                app:layout_constraintTop_toTopOf="@id/img_square_foot" />
+
+            <ImageView
+                android:id="@+id/img_bhk"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_space_horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/img_square_foot"
+                app:layout_constraintStart_toEndOf="@+id/tv_property_size"
+                app:layout_constraintTop_toTopOf="@id/img_square_foot"
+                app:srcCompat="@drawable/img_bedroom_count" />
+
+            <TextView
+                android:id="@+id/tv_bedroom_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_small"
+                android:maxEms="1"
+                tools:text="@string/tv_preview_bhk_count"
+                android:text="@{data.bedrooms.toString}"
+                android:textColor="@color/tv_address"
+                android:textSize="@dimen/card_address_size"
+                app:layout_constraintBottom_toBottomOf="@id/img_bhk"
+                app:layout_constraintStart_toEndOf="@id/img_bhk"
+                app:layout_constraintTop_toTopOf="@id/img_bhk" />
+
+            <ImageView
+                android:id="@+id/img_bathroom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_space_horizontal"
+                app:layout_constraintBottom_toBottomOf="@id/img_bhk"
+                app:layout_constraintStart_toEndOf="@+id/tv_bedroom_count"
+                app:layout_constraintTop_toTopOf="@id/img_bhk"
+                app:srcCompat="@drawable/img_bathroom_count" />
+
+            <TextView
+                android:id="@+id/tv_bathroom_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/space_small"
+                android:maxEms="1"
+                tools:text="@string/tv_preview_bhk_count"
+                android:text="@{data.bathrooms.toString}"
+                android:textColor="@color/tv_address"
+                android:textSize="@dimen/card_address_size"
+                app:layout_constraintBottom_toBottomOf="@id/img_bathroom"
+                app:layout_constraintStart_toEndOf="@id/img_bathroom"
+                app:layout_constraintTop_toTopOf="@id/img_bathroom" />
+
+            <ImageView
+                android:id="@+id/img_property_bookmark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/card_space_horizontal"
+                android:layout_marginBottom="@dimen/space_small"
+                android:src="@drawable/img_bookmark"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout><!--the TV which has id of tv_city_name can be replaced with owner's name in future-->

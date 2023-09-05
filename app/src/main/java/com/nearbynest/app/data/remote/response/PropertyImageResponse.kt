@@ -13,14 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.nearbynest.app.data.remote.request
+package com.nearbynest.app.data.remote.response
 
 import com.google.gson.annotations.SerializedName
 
-data class DummyRequest(
-    @SerializedName("name")
-    val name: String = "",
-
-    @SerializedName("location")
-    val location: String = ""
+data class PropertyImageResponse(
+    @SerializedName("total") val total: Int?,
+    @SerializedName("totalHits") val totalHits: Int?,
+    @SerializedName("hits") val hits: List<ImageInfo>?
 )

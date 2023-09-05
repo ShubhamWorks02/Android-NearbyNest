@@ -4,4 +4,9 @@
     <string name="menu_title_map">Map</string>
     <string name="menu_title_list">List</string>
     <string name="menu_title_profile">Profile</string>
+    <string name="tv_preview_city_name">Dup Apartment</string>
+    <string name="tv_preview_apartment_price">$267000</string>
+    <string name="tv_preview_address">2BW Street, NY, New York</string>
+    <string name="tv_preview_square_foot">2000sqft</string>
+    <string name="tv_preview_bhk_count">4</string>
 </resources>

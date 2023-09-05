@@ -6,7 +6,15 @@
     <dimen name="space_medium">20dp</dimen>
     <dimen name="space_large">32dp</dimen>
     <dimen name="space_extra_large">64dp</dimen>
+
     <!--  item_user  -->
     <dimen name="profile_img_size">100dp</dimen>
     <dimen name="placeholder_corner_radius">50dp</dimen>
+    <dimen name="card_corner_radius">24dp</dimen>
+    <dimen name="card_space_vertical">5dp</dimen>
+    <dimen name="card_space_horizontal">12dp</dimen>
+    <dimen name="card_price_start_space">18dp</dimen>
+    <dimen name="card_property_name">18sp</dimen>
+    <dimen name="card_address_size">14sp</dimen>
+    <dimen name="property_image">80dp</dimen>
 </resources>
